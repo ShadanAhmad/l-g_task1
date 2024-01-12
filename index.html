@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/js/bootstrap.min.js">
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Fontawesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <style>
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+    position: relative;
+}
+.container-ban {
+  position: relative;
+  margin-top: 100px;
+}
+.container img {
+  display: block;
+  width: 100%;
+}
+nav {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 0;
+    font-family: "Montserrat", "sans-serif";
+    height: 100px;
+    background-color: #fdfdfd;
+    padding: 0 5%;
+    border-bottom: 2px solid #cdcaca;
+}
+nav .logo {
+    float: left;
+    width: 10%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: #fff;
+}
+nav .links {
+    float: right;
+    padding: 0;
+    margin: 0;
+    width: 72%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav .links li {
+  list-style: none;
+}
+nav .links a {
+    display: block;
+    padding: 1em;
+    font-size: 16px;
+    font-weight: 400;
+    color: #0b54bf;
+    text-decoration: none;
+    position: relative;
+    font-family: emoji;
+}
+nav .links a:hover {
+  color: rgb(8, 6, 6);
+}
+nav .links a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+nav .links a:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+  color: white;
+}
+#nav-toggle {
+  position: absolute;
+  top: -100px;
+}
+nav .icon-burger {
+  display: none;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+nav .icon-burger .line {
+  width: 30px;
+  height: 5px;
+  background-color: #0a0909;
+  margin: 5px;
+  border-radius: 3px;
+  transition: all 0.5s ease-in-out;
+}
+@media screen and (max-width: 768px) {
+  nav .logo {
+    float: none;
+    width: auto;
+    justify-content: center;
+  }
+  nav .links {
+    float: none;
+    position: fixed;
+    z-index: 9;
+    left: 0;
+    right: 0;
+    top: 100px;
+    bottom: 100%;
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+  }
+  nav .links a {
+    font-size: 20px;
+  }
+  nav :checked ~ .links {
+    bottom: 0;
+  }
+  nav .icon-burger {
+    display: block;
+  }
+  nav :checked ~ .icon-burger .line:nth-child(1) {
+    transform: translateY(10px) rotate(225deg);
+  }
+  nav :checked ~ .icon-burger .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-225deg);
+  }
+  nav :checked ~ .icon-burger .line:nth-child(2) {
+    opacity: 0;
+  }
+}
+.container-ban {
+    background-color: #f3f9ff;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h2 {
+    color: #063798;
+    line-height: 58px;
+    font-family: auto;
+    font-size: 49px;
+    font-weight: 600;
+    margin-top: 55px;
+}
+
+p {
+    color: #063798;
+    line-height: 44px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.slider-area h2 {
+	text-align: center;
+	font-family: impact;
+	font-size: 60px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin: 100px 0 30px 0;
+	color: #fff;
+}
+.wrapper {
+	display: flex;
+	width: 750px;
+	margin: 0 auto;
+	overflow: hidden;
+	border-radius: 180px;
+	padding: 2.5rem;
+	background: #ddd;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.item {
+	animation: animate 25s alternate linear infinite;
+}
+.container:hover .item {
+	animation-play-state: paused;
+}
+@keyframes animate {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+	100% {
+		transform: translate3d(-1100px, 0, 0);
+	}
+}
+@media (max-width:767px) {
+	.slider-area h2 {
+		font-size: 30px;
+	}
+	.wrapper {
+		width: 95%;
+		border-radius: 0;
+		padding: 0;
+	}
+}
+.image-gallery {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    justify-content: center;
+    gap: 79px;
+}
+
+.img1 {
+  max-width: 100%;
+  height: auto;
+  margin-right: 10px;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .image-gallery {
+    
+    align-items: center; /* Center images in the vertical direction */
+  }
+
+  .img1 {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+h3.img-h2 {
+    text-align: center;
+    font-size: 13px;
+    color: #8a8484;
+    margin-top: 78px;
+    margin-bottom: 45px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.image-column img {
+  max-width: 100%;
+  height: auto;
+  
+}
+
+.text-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 73px;
+    width: 84%;
+}
+.text-block {
+    align-items: center;
+    border-bottom: 1px solid #d1d1d1;
+    padding: 10px;
+}
+
+.text-block img {
+  max-width: 52px;
+  margin-right: 10px;
+}
+
+h2.grid-h2 {
+    color: #0a5487;
+    text-align: center;
+    font-size: 37px;
+    margin-top: 46px;
+}
+h3.\33 d-sec-h3 {
+    text-align: center;
+    font-size: 25px;
+    color: #0a5487;
+    padding-top: 82px;
+}
+p.\33 d-sec-p {
+    text-align: center;
+    line-height: 24px;
+}
+.\33 d-sec {
+    background-color: rgb(255,249,234);
+}
+
+.body{
+  height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.sec4{
+  position: relative;  
+  height: 450px;
+  width: 1075px;
+  display: flex;
+  align-items: center;
+}
+
+/* .swiper{
+  width: 950px;
+} */
+
+.card{
+  position: relative;
+  background: #fff;
+  height: 400px;
+  margin: 20px 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card::before{
+  content: "";
+  position: absolute;
+  height: 40%;
+  width: 100%;
+  background: white;
+  border-radius: 20px 20px 0 0;
+}
+
+.card .card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  position: relative;
+  z-index: 100;
+}
+section .card .image {
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    padding: 3px;
+    margin-top: 30px;
+}
+
+section .card .image img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20%;
+  border: 3px solid #fff;
+}
+
+
+.swiper-pagination{
+  position: absolute;
+  top: 450px;
+}
+
+.swiper-pagination-bullet {
+    height: 7px;
+    width: 26px;
+    border-radius: 25px;
+    background: #0d7ee4;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    opacity: 0.7;
+    color: #444242;
+    transition: all 0.3s ease;
+
+}
+.swiper-button-next:hover, .swiper-button-prev:hover{
+  opacity: 1;
+  color: rgb(3, 3, 3);
+}
+p.testi-slid {
+    font-size: 13px;
+    color: #797676;
+    line-height: 29px;
+}
+p.Tempy {
+    font-size: 13px;
+    color: #858484;
+}
+.swiper-button-next {
+    position: absolute;
+    top: auto;
+}
+.swiper-button-prev {
+    position: absolute;
+    top: auto;
+}
+h1.testi-h1 {
+    text-align: center;
+    color: #0a5487;
+    font-size: 27px;
+}
+.swiper-button-next {
+    position: absolute;
+    top: auto;
+    padding-right: 30px;
+    margin-top: -267px;
+}
+.swiper-button-prev{
+    position: absolute;
+    top: auto;
+    padding-left: 30px;
+    margin-top: -267px;
+}
+
+
+footer {
+	background: #ffffff;
+	padding: 86px 0;
+}
+.single-content {
+	text-align: center;
+	padding: 115px 0;
+}
+.single-box p {
+    color: #5c5959;
+    line-height: 1.9;
+    margin-top: 18px;
+}
+.single-box h3 {
+	font-size: 16px;
+	font-weight: 700;
+	color: #232222;
+}
+.single-box .card-area i {
+	color: #232222;
+	font-size: 20px;
+	margin-right: 10px;
+}
+.single-box ul {
+	list-style: none;
+	padding: 0;
+}
+.single-box ul li a {
+    text-decoration: none;
+    color: #232222;
+    line-height: 2.5;
+    font-weight: 300;
+}
+.single-box h2 {
+	color: #232222;
+	font-size: 20px;
+	font-weight: 700;
+}
+#basic-addon2 {
+	background: #fe1e4f;
+	color: #232222;
+}
+
+
+@media (max-width: 767px) {
+	.single-box {
+		margin-bottom: 50px;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	.single-box {
+		margin-bottom: 50px;
+	}
+}
+img.footer-img {
+    width: 100px;
+}
+img.soc1 {
+    width: 19px;
+    height: 19px;
+}
+.socials {
+    display: flex;
+    gap: 13px;
+    margin-top: 24px;
+}
+div#pag {
+    padding-left: 92px;
+}
+.footr .container {
+    border-bottom: 1px solid #e5e5e5;
+}
+.cookies {
+    display: flex;
+    gap: 34px;
+    justify-content: center;
+    margin-top: 63px;
+}
+a.cook1 {
+    font-size: 13px;
+    color: #959595;
+    text-decoration: none;
+}
+
+
+.main-section-foot {
+    display: flex;
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
+}
+
+.left-content-foot {
+  order: 1; /* Place left content first in the mobile view */
+}
+
+.right-content-foot {
+  order: 1; /* Place right content second in the mobile view */ /* Add space between left and right content */
+  text-align: left;
+}
+
+section.main-section-foot {
+    background: #3752FF;
+    flex-flow: wrap;
+}
+
+.foot-h2{
+  color: #333;
+}
+
+.action-button-foot {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.action-button-foot img {
+  max-width: 24px;
+  margin-right: 10px;
+}
+
+/* Responsive Styles */
+@media (min-width: 600px) {
+
+    .main-section-foot {
+        flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .left-content-foot{
+    width: 50%;
+    text-align: left;
+  }
+
+  .right-content-foot {
+    width: 45%;
+  }
+}
+h2.foot-h2 {
+    color: white;
+    /* width: 318px; */
+    line-height: 61px;
+    font-size: 47px;
+   
+}
+
+button.action-button-foot {
+    margin-top: 54px;
+    background: white;
+    color: #514c4c;
+    font-size: 12px;
+    border-radius: 20px;
+    width: 190px;
+    height: 50px;
+}
+.cent-btn {
+    display: flex;
+    justify-content: center;
+}
+p.fot-p {
+    text-align: center;
+    color: antiquewhite;
+    line-height: 67px;
+}
+button.cont-nav {
+    background: #3752ff;
+    font-size: 13px;
+    border-radius: 20px;
+}
+button.buy {
+    background: #3752FE;
+    border-radius: 20px;
+    width: 185px;
+}
+button.see {
+    background: white;
+    color: #3e61c9;
+    border-radius: 20px;
+    width: 194px;
+}
+.flex {
+    display: flex;
+    flex-wrap: nowrap;
+   
+}
+
+@media (max-width: 767px) and (max-width: 991px){
+    h2 {    
+    line-height: 34px;
+       font-size: 16px; 
+}
+p {
+   
+    line-height: 27px;
+    font-size: 11px;
+}
+button.buy {
+    width: 100px;
+    font-size: 8px;
+}
+button.see {
+    width: 128px;
+    font-size: 9px;
+}
+.swiper-button-next {
+    display: none;
+}
+.swiper-button-prev {
+    display: none;
+}
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+   
+}
+.card .card-content {
+    width: 400px;
+}
+.card {
+
+    width: 400px !important;
+    
+}
+.body {
+    height: 100%;
+}
+h2.foot-h2 {
+    line-height: 43px;
+    font-size: 26px;
+    padding-left: 2px;
+}
+button.action-button-foot {
+    margin-left: 1px;
+    margin-top: 54px;
+    font-size: 10px;
+    border-radius: 20px;
+    width: 154px;
+    height: 50px;
+}
+p.fot-p {
+    text-align: center;
+    color: antiquewhite;
+    line-height: 46px;
+}
+div#pag {
+    padding-left: 0px;
+}
+h2.grid-h2 {
+    font-size: 23px;
+    margin-top: 12px;
+}
+h3.grid-p {
+    font-size: 15px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 3fr);
+    gap: 4px;
+    padding: 20px;
+}
+h3.\33 d-sec-h3 {
+   
+    font-size: 19px;
+   
+}
+h1.testi-h1 {
+    font-size: 20px;
+}
+.card .card-content {
+    width: 100%;
+}
+.card {
+    width: 100% !important;
+}
+button.buy2 {
+    font-size: 11px;
+    width: 135px;
+}
+nav .links a {
+
+    color: white;
+}
+
+}
+.btn-buy {
+    text-align: center;
+}
+img.\33 d-sec-img {
+    width: 100%;
+}
+button.buy2 {
+    position: relative;
+    background: #3752FE;
+    border-radius: 20px;
+    width: 185px;
+}
+@media screen and (max-width: 1058px) {
+  nav .links { 
+    width: 89%;
+}
+button.cont-nav {   
+    font-size: 8px; 
+}
+nav .links a {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+}
+@media screen and (max-width: 766px) {
+  nav .links {
+    width: 100%;
+}
+button.cont-nav {
+
+    font-size: 15px;
+}
+}
+@media screen and (max-width: 1315px) {
+  .image-gallery {
+    gap: 34px;
+}
+}
+@media screen and (max-width: 1042px) {
+  .image-gallery {
+    gap: 7px;
+}
+}
+@media screen and (max-width: 888px) {
+  .image-gallery {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    justify-content: center;
+    gap: 27px;
+    flex-wrap: wrap;
+}
+}
+@media screen and (max-width: 1071px) {
+  .swiper.mySwiper.container.swiper-initialized.swiper-horizontal.swiper-android.swiper-backface-hidden {
+    width: 833px;
+}
+p.testi-slid {
+    font-size: 13px;
+    color: #797676;
+    line-height: 23px;
+}
+}
+@media screen and (max-width: 992px) {
+  p.testi-slid {
+    font-size: 12px;
+    color: #797676;
+    line-height: 17px;
+}
+}
+
+@media screen and (max-width: 822px) {
+  .swiper-button-next {
+    padding-right: -8px;
+    margin-top: -267px;
+}
+.swiper-button-prev {
+  padding-right: -8px;
+    margin-top: -267px;
+}
+}
+@media screen and (max-width: 767px) {
+  .card {
+    position: relative;
+    background: #fff;
+    height: 299px;
+    margin: 9px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+}
+@media screen and (max-width: 576px) {
+  .card {
+    width: 100% !important;
+}
+}
+@media screen and (max-width: 301px) {
+  p.testi-slid {
+    font-size: 11px;
+    color: #797676;
+    line-height: 14px;
+}
+}
+@media screen and (max-width: 600px) {
+  section.main-section-foot {
+    background: #3752FF;
+    flex-flow: wrap;
+    justify-content: center;
+}
+}
+footer {
+    padding: 1px 0px;
+}
+div#box1-footer {
+    margin-top: 77px;
+}
+.cookies {
+    display: flex;
+    gap: 34px;
+    justify-content: center;
+    margin-top: 17px;
+    padding-bottom: 14px;
+}
+
+@media screen and (max-width: 870px) {
+  h2.foot-h2 {
+    line-height: 54px;
+    font-size: 37px;
+}
+}
+@media screen and (max-width: 698px) {
+  h2.foot-h2 {
+    line-height: 54px;
+    font-size: 28px;
+}
+
+}
+@media screen and (max-width: 768px) {
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+    display: none;
+}
+}
+  </style>
+</head>
+
+<body>
+  <nav>
+    <input type="checkbox" id="nav-toggle">
+    <div class="logo"><img src="images12/logo.png"></div>
+    <ul class="links">
+      <li><a href="#home">Homepage</a></li>
+      <li><a href="#about">Products</a></li>
+      <li><a href="#work">Company</a></li>
+      <li><a href="#projects">Pricing</a></li>
+      <li><a href="#contact">Blog</a></li>
+      <li><a href="#contact">+00 123 456 789</a></li>
+      <button class="cont-nav">Contact Us</button>
+    </ul>
+    <label for="nav-toggle" class="icon-burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </label>
+  </nav>
+
+  <div class="container-ban">
+    <h2>Good design meets <br>great user experience</h2>
+    <p>For everyone, from beginners to experts</p>
+    <button class="buy">Buy Digits</button>
+    <button class="see">See the Features</button>
+   <div class="Graphic"> <img class="grap-banner-img" src="images12/Graphic.png" alt="Image"></div>
+  </div>
+  <h3 class="img-h2">Trusted by forward-thinking software teams around the world</h3>
+  <div class="image-gallery">
+    <img class= "img1" src="images12/logo-1.png" alt="Image 1">
+    <img class= "img1" src="images12/logo-2.png" alt="Image 1">
+    <img class= "img1" src="images12/logo-3.png" alt="Image 1">
+    <img class= "img1" src="images12/logo-4.png" alt="Image 1">
+    <img class= "img1" src="images12/logo-5.png" alt="Image 1">
+    <img class= "img1" src="images12/logo-6.png" alt="Image 1">
+    <img class= "img1" src="images12/logo-7.png" alt="Image 1">
+  </div>
+  <h2 class="grid-h2">Whatever work you do,<br> we're able to help</h2>
+  <div class="grid-container">
+    <div class="image-column">
+      <img class="img-grid" src="images12/Graphic (1).jpg" alt="Image 1">
+    </div>
+
+    <div class="text-column">
+      <div class="text-block">
+       <div class="flex"> <img class="grid-icon" src="images12/Icon (2).png" alt="Icon 1">
+        <h3 class="grid-p">Design and Assets</h3></div>
+        <p class="grid-p">Make your brand stand out with pixel-perfect design crafted to perfection.s</p>
+      </div>
+      
+      <div class="text-block">
+        <div class="flex"> <img  class="grid-icon" src="images12/Icon (1).png" alt="Icon 2">
+        <h3 class="grid-p">Easy Content</h3></div>
+      <p class="grid-p">Import your demos or build pages visually. Bonus: All images and illustrations included!</p>
+      </div>
+      
+      <div class="text-block">
+        <div class="flex"> <img class="grid-icon" src="images12/Icon.png" alt="Icon 3">
+        <h3 class="grid-p">Fast and Reliable</h3></div>
+        <p class="grid-p">No heavy-weight plugins. No builders. No unneccesary file loading. Pure WordPress.</p>
+      </div>
+     
+    </div>
+  </div>
+
+<div class="3d-sec">
+<h3 class="3d-sec-h3">Simplicity meets innovative design</h3>
+<p class="3d-sec-p">It's really easy to start using Digits.<br>
+    Install the theme, choose a demo and<br>
+    start designing the future of your business!</p>
+   <div class="btn-buy" ><button class="buy2">Buy Digits</button></div>
+<img  class="3d-sec-img" src="images12/Graphic (2).png">
+</div>
+
+  <label for="nav-toggle" class="icon-burger">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </label>
+
+</div>
+
+<div class="body">
+    <section>
+      <h1 class="testi-h1">What others are saying</h1>
+      <div class="swiper mySwiper container">
+        <div class="swiper-wrapper content">
+  
+  
+          <div class="swiper-slide card">
+            <div class="card-content">
+              <p class="testi-slid">Completely beautiful website and amazing support! This is my second website from this author and I love both of the sites so much and she has helped me so well I need!</p>
+              <div class="image">
+                <img src="images12/image 5.png" alt="">
+              </div>  
+              <p class="Happy">Happy User</p>
+              <p class="Tempy">Tempy.club</p>
+              </div>
+          </div>
+              
+          <div class="swiper-slide card">
+              <div class="card-content">
+                <p class="testi-slid">Really easy to use and customize. easy to understand. Darinka helped me with my site! She answers very quickly, a good service! Thank you very much!</p>
+                <div class="image">
+                  <img src="images12/image 6.png" alt="">
+                </div>  
+                <p class="Happy">Happy User</p>
+                <p class="Tempy">Tempy.club</p>
+                </div>
+            </div>
+  
+            <div class="swiper-slide card">
+              <div class="card-content">
+                <p class="testi-slid">Really pleasing to look at! Documentation (including installation instructions) are clear and that is coming from a relatively new WordPress user.</p>
+                <div class="image">
+                  <img src="images12/image 7.png" alt="">
+                </div>  
+                <p class="Happy">Happy User</p>
+                <p class="Tempy">Tempy.club</p>
+                </div>
+            </div>
+            <div class="swiper-slide card">
+              <div class="card-content">
+                <p class="testi-slid">Completely beautiful website and amazing support! This is my second website from this author and I love both of the sites so much and she has helped me so well when I needed it!</p>
+                <div class="image">
+                  <img src="images12/image 5.png" alt="">
+                </div>  
+                <p class="Happy">Happy User</p>
+                <p class="Tempy">Tempy.club</p>
+                </div>
+            </div>
+                
+           
+  
+        </div>
+        
+      </div>
+  
+      <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </section>
+  </div>
+ 
+
+
+  <section class="main-section-foot">
+   
+    
+    <div class="right-content-foot">
+      <h2 class="foot-h2">Ready to Launch Your Next Website</h2>
+    </div>
+    <div class="left-content-foot">
+      <div class="cent-btn">
+        <button class="action-button-foot">
+          <img class="foot-btn-icon" src="images12/x31 5 Send Mail.png" alt="Icon">
+          Get in Touch Now
+        </button></div>
+        <p class="fot-p">Or, take a peek inside our design studio.</p>
+      </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="footr">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-box" id="box1-footer">
+                    <img  class="footer-img" src="images12/logo.png">
+                <p class="foot-p">Digits is a website template built to work seamlesly with the WordPress block editor to create beautifully designed pages in minutes.</p>
+                
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-box" id="pag">
+                    <h2>pages</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Contact</a></li>
+                    
+                </ul>
+                </div>                    
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-box">
+                    <h2>Demos</h2>
+                <ul>
+                    <li><a href="#">Classic</a></li>
+                    <li><a href="#">Boxy</a></li>
+                    <li><a href="#">Gradient</a></li>
+                    <li><a href="#">Minimal</a></li>
+                    <li><a href="#">Night</a></li>
+                    
+                </ul>
+                </div>                    
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-box">
+                    <h2>Resources</h2>
+                   
+                    <div class="socials">
+                       <img class="soc1" src="images12/icon-dribbble.png" >
+                       <img class="soc1" src="images12/icon-facebook.png" >
+                       <img class="soc1" src="images12/icon-instagram.png" >
+                       <img class="soc1" src="images12/icon-twitter.png" >
+                       <img class="soc1" src="images12/icon-envato.png" >
+                    </div>
+                   <p>Download Now</p>
+                   <p>Documentation</p>
+                </div>
+            </div>
+        </div>
+    </div>
+   <div class="cookies">
+    <a class= "cook1" href="#">Privacy Policy</a>
+    <a class= "cook1" href="#">Terms of use </a>
+    <a class= "cook1" href="#">GDPR</a>
+
+    </div>
+</footer>
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+slidesPerView: 3,
+spaceBetween: 30,
+slidesPerGroup: 3,
+loop: true,
+loopFillGroupWithBlank: true,
+pagination: {
+  el: ".swiper-pagination",
+  clickable: true,
+},
+navigation: {
+  nextEl: ".swiper-button-next",
+  prevEl: ".swiper-button-prev",
+},
+});
+</script>
+
+</body>
+
+</html>
